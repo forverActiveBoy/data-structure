@@ -86,7 +86,7 @@ public class Array<E> {
     private E[] resize(int newCapacity){
         E[] newArray = (E[])new Object[newCapacity];
         //  将原数组中的数据拷贝到新数组中
-        for (int i = 0; i < data.length; i++){
+        for (int i = 0; i < size; i++){
             newArray[i] = data[i];
         }
         return newArray;
