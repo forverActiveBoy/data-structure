@@ -1,6 +1,5 @@
 package com.yunkan.model;
 
-import java.util.Arrays;
 
 /**
  * @author foreverActiveBoy
@@ -138,7 +137,74 @@ public class Array<E> {
      * @param e
      * @return
      */
-/*    public boolean contains(E e){
+    public boolean contains(E e){
+        for (int i = 0; i < size;i++){
+            if (e.equals(data[i])){
+                return true;
+            }
+        }
+        return false;
+    }
 
-    }*/
+    /**
+     * 查找元素的索引
+     * @param e
+     * @return
+     */
+    public int find(E e){
+        for (int i = 0;i < size;i++){
+            if(e.equals(data[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 删除index位置的元素
+     * @param index
+     * @return
+     */
+    public E remove(int index){
+        //  参数校验
+        if (index < 0 || index >= size){
+            throw new IllegalArgumentException("remove failed. Index is illegal");
+        }
+        for (int i = index;i < size-1;i++){
+            data[i] = data[i+1];
+        }
+        data[size-1] = null;
+        size--;
+        if (size == data.length/4 && data.length/2 != 0){
+            data = resize(data.length/2);
+        }
+       return  data[index];
+    }
+
+    /**
+     * 删除第一个元素
+     * @return
+     */
+    public E removeFirst(){
+        return remove(0);
+    }
+
+    /**
+     * 删除最后一个元素
+     * @return
+     */
+    public E removeLast(){
+        return remove(size-1);
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+            buffer.append(String.format("数组中的元素个数size：%d and 容量capacity:%d",size,data.length)+"\t [");
+        for (int i = 0;i< size-1;i++){
+            buffer.append(data[i]+",");
+        }
+        buffer.append(data[size-1]+"]");
+        return buffer.toString();
+    }
 }
