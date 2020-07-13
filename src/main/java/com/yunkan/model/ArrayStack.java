@@ -3,7 +3,7 @@ package com.yunkan.model;
 /**
  * @author foreverActiveBoy
  * @date 2020/7/13 20:20
- * @apiNote
+ * @apiNote 栈-数组实现
  */
 public class ArrayStack<E> implements Stack<E> {
     private Array<E> data;
