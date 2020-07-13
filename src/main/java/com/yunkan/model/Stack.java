@@ -3,7 +3,7 @@ package com.yunkan.model;
 /**
  * @author foreverActiveBoy
  * @date 2020/7/13 20:17
- * @apiNote 栈
+ * @apiNote 栈接口
  */
 public interface Stack<E> {
     /**
