@@ -3,7 +3,7 @@ package com.yunkan.model;
 /**
  * @author foreverActiveBoy
  * @date 2020/7/13 20:42
- * @apiNote 对列接口
+ * @apiNote 队列接口
  */
 public interface Queue<E> {
     /**
