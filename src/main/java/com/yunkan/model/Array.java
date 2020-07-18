@@ -68,7 +68,7 @@ public class Array<E> {
         }
         //  如果数组容量不够，则扩容
         if (size == data.length){
-            data = resize(2 * data.length);
+            data = resize(data.length << 1);
         }
         //  将index后面的元素后移
         for (int i = size-1; i >= index;i--){
@@ -176,7 +176,7 @@ public class Array<E> {
         data[size-1] = null;
         size--;
         if (size == data.length/4 && data.length/2 != 0){
-            data = resize(data.length/2);
+            data = resize(data.length >> 1);
         }
        return  data[index];
     }
