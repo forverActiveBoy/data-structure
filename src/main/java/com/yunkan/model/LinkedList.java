@@ -90,7 +90,6 @@ public class LinkedList<E> {
            prevNode = prevNode.next;
         }
         prevNode.next = prevNode.next.next;
-        prevNode.next.next = null;
         size -- ;
     }
 
